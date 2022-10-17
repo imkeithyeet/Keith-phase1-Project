@@ -1,0 +1,13 @@
+body {
+    background: blue;
+  }
+h1 {
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+}
+h2 {
+    font-stretch: extra-condensed;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+}
