@@ -1,34 +1,76 @@
-<html>
-  <head>
-    <title>Memepicker</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div class="logo">
-      <h1>The Memes</h1>
-    </div>
 
-    <div id="Meme-bar">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="characterInfo">
-      <div id="detailed-info">
-        <p id="name">Meme's Name</p>
-        <img
-          id="image"
-          src="assets/dummy.gif"
-          alt="Meme's Name"
-        /> .
-        <!-- meme images here -->
-        <h4>Total Likes: <span id="vote-count">Meme likes</span></h4>
-        <form id="likes-form">
-          <input type="text" placeholder="Enter likes" id="likes" name="likes" />
-          <input type="submit" value="Add likes" />
-        </form>
-        <button id="reset-btn">Reset Likes</button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div class="navbar">
+      <h2>Meme Online Store</h2>
+      <div class="cart"> 
+        <i class="bi bi-cart2"></i>
+        <div class="cartAmount"></div>
       </div>
 
-    </div>
-    <script defer src="index.js"></script>
-  </body>
-</html>
+  </div>
+<div class="shop" id="shop">
+
+<div class="item"> 
+  <h3>Meme 2 </h3>
+  <p>This meme sucks</p>
+  <div class="price-qty">
+  <h2>$200</h2>
+  <div class="buttons">
+    <i class="bi bi-dash-lg"></i>
+    <div class="quantity">0</div>
+    <i class="bi bi-plus-lg"></i>
+  </div>
+  </div>
+  <img width="220" src="assets/placeholder.jpg" alt="">
+  <div class="details"></div>
+</div> 
+<div class="item"> 
+  <h3>Meme 3 </h3>
+  <p>This meme sucks</p>
+  <div class="price-qty">
+  <h2>$1,000</h2>
+  <div class="buttons">
+    <i class="bi bi-dash-lg"></i>
+    <div class="quantity">0</div>
+    <i class="bi bi-plus-lg"></i>
+  </div>
+  </div>
+  <img width="220" src="assets/placeholder.jpg" alt="">
+  <div class="details"></div>
+</div> 
+
+<div class="item"> 
+  <h3>Meme 4 </h3>
+  <p>This meme sucks</p>
+  <div class="price-qty">
+  <h2>$879</h2>
+  <div class="buttons">
+    <i class="bi bi-dash-lg"></i>
+    <div class="quantity">0</div>
+    <i class="bi bi-plus-lg"></i>
+  </div>
+  </div>
+  <img width="220" src="assets/placeholder.jpg" alt="">
+  <div class="details"></div>
+</div> 
+</div>
+<form action="/form/submit" method="GET"> 
+  <input type="text" name="text" class="search" placeholder="Search here!">
+  <input type="submit" name="submit" class="submit" value="Search">
+</form>
+</body>
+<script src="index.js"></script>
+
+</html
