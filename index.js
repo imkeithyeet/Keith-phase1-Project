@@ -1,108 +1,96 @@
-const API="https://api.imgflip.com/get_memes"
+// Elements
+const API = "http://localhost:3000/memes";
 const shop = document.getElementById("shop");
+// const memeDiv = document.getElementById("item");
+const cursor = document.getElementById("cursor");
+const cursor2 = document.getElementById("cursor2");
+const minusButtons = document.querySelectorAll('.minus-btn');
+const plusButtons = document.querySelectorAll('.plus-btn');
+const inputFields = document.querySelectorAll('.quantity input');
+
+// document.addEventListener("DOMContentLoaded",()=>{
+
+// })
+
+function renderMeme() {
+  fetch(API)
+    .then((res) => res.json())
+    .then((memeData) => {
+      memeData.forEach((meme) => {
+        const memeDiv = document.createElement("div");
+        memeDiv.className = "item";
+        const title = document.createElement("h3");
+        title.textContent = meme.name;
+        memeDiv.appendChild(title);
+        shop.append(memeDiv);
+        const memeP=document.createElement("p");
+        memeP.textContent=meme.desc;
+        memeDiv.append(memeP);
+        const memePrice = document.createElement("h2");
+        memePrice.textContent=meme.price;
+        memeDiv.append(memePrice)
+        const memeImg=new Image ('222','170')
+        memeImg.src =meme.image;
+        memeDiv.append(memeImg)
+      });                  
+      // console.log(memeData);
+    });
+}
+
+// const imgs = document.getElementById("image");
+// imgs.addEventListener("mouseover", function () {
+//   imgs.append(imgs);
+//   console.log(imgs);
+// });
 
 
-document.addEventListener("DOMContentLoaded",()=>{
- 
-})
+//eventListeners
+const searchForm = document.getElementById("form");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  // console.log("clicked")
+});
 
 
-function renderMeme(){
-   fetch("API")
-    .then((res)=>res.json())
-    .then((memeData)=>{
-       memeData.forEach(renderMeme)
-       console.log(res)
-    })
-   }
-
-// console.log(shop)
-const memeItemsData = [
-  {
-    id: "181913649",
-    name: "Drake Hotline Bling",
-    price: 400,
-    desc: "Call me on my cell phone",
-    img: "assets/placeholder.jpg",
-  },
-  {
-    id: "112126428",
-    name: "Distracted Boyfriend",
-    price: 200,
-    desc: "What you looking at willis",
-    img: "assets/placeholder.jpg",
-  },
-  {
-    id: "438680",
-    name: "Batman Slapping Robin",
-    price: 1000,
-    desc: "Do that again and i will disown you",
-    img: "assets/placeholder.jpg",
-  },
-  {
-    id: "188390779",
-    name: "Woman Yelling At Cat",
-    price: 879,
-    desc: "You said it was gluten free!!!",
-    img: "assets/placeholder.jpg",
-  },
-];
-let basket=[]
-const memeShop = () => {
-  return (shop.innerHTML = memeItemsData
-   .map((x)=>{
-      let{id,name,price,desc,img}=x;
-   return `
-   <div id=product-items-${id} class="item"> 
-   <img width="220" src="assets/placeholder.jpg" alt="">
-  <div class="details"></div>
-  <h3>${name} </h3>
-  <p>${desc}</p>
-  <div class="price-qty">
-  <h2>$ ${price}</h2>
-  <div class="buttons">
-    <i  onclick="decrement(${id})"class="bi bi-dash-lg"></i>
-    <div id=${id} class="quantity">0</div>
-    <i onclick="increment(${id})"class="bi bi-plus-lg"></i>
-  </div>
-  </div>
-</div> 
-   `
-  }).join(""));
-
-};
-
-memeShop();
-
-let increment=(id)=>{
-   let selectedItem=id;
-   let search = basket.find((x)=>x.id === selectedItem.id)
-   if (search === undefined){
-      basket.push({
-         id: selectedItem.id,
-         item:1,
-      }) 
-   } else{
-      search.item+=1;
-   }
-   // console.log(basket)
-   update(selectedItem.id)
+function totalClick(click){
+  const totalClicks= document.getElementById("totalClicks");
+  const sumvalue= parseInt(totalClicks.innerText) + click;
+  console.log(sumvalue+click)
+  totalClicks.innerText = sumvalue;
+  // we don't want negative clicks
+  if(sumvalue <0){
+    totalClicks.innerText = 0;
+  }
+// reset them values
+if(click===0){
+  totalClicks.innerText = 0;
 
 }
-let decrement=(id)=>{
-   let selectedItem=id;
-   let search = basket.find((x)=>x.id === selectedItem.id)
+}
+
+const textInfo = document.getElementById("text");
+console.log(text);
+
+
+document.addEventListener("mousemove", function (e) {
+  cursor.style.cssText = cursor2.style.cssText =
+    "left: " + e.clientX + "px;top: " + e.clientY + "px;";
+});
+
+for (let i = 0; i < minusButtons.length; i++) {
+  minusButtons[i].addEventListener('click', function minusProduct() {
+    if (inputFields[i].value) {
+      inputFields[i].value--;
+    }
+  });
+}
+for (let i = 0; i < minusButtons.length; i++) {
+  plusButtons[i].addEventListener('click', function plusProduct() {
+    inputFields[i].value++;
+  });
+}
+
+renderMeme();
+
   
-   if (search.item === 0 )return;
-   else{
-      search.item-=1;
-   }
-// console.log(basket)
-update(selectedItem.id)
-}
-let update=(id)=>{
-   const search=basket.find((x)=>x.id===id)
-   console.log(search.item)
-   document.getElementById(id).innerHTML=search.item
 
-}

@@ -6,71 +6,74 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clothing Store</title>
+  <title>Meme Shop</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
-  <div class="navbar">
-      <h2>Meme Online Store</h2>
-      <div class="cart"> 
+  <div id="navbar" class="navbar">
+      <h1>Meme Online Store</h1>
+      <div id ="cart" class="cart"> 
         <i class="bi bi-cart2"></i>
-        <div class="cartAmount"></div>
+        <div id="cartAmount" class="cartAmount"></div>
       </div>
 
   </div>
-<div class="shop" id="shop">
-
-<div class="item"> 
-  <h3>Meme 2 </h3>
-  <p>This meme sucks</p>
-  <div class="price-qty">
-  <h2>$200</h2>
-  <div class="buttons">
-    <i class="bi bi-dash-lg"></i>
-    <div class="quantity">0</div>
-    <i class="bi bi-plus-lg"></i>
-  </div>
-  </div>
-  <img width="220" src="assets/placeholder.jpg" alt="">
-  <div class="details"></div>
+  
+<div class ="shop" id="shop">
 </div> 
-<div class="item"> 
-  <h3>Meme 3 </h3>
-  <p>This meme sucks</p>
-  <div class="price-qty">
-  <h2>$1,000</h2>
-  <div class="buttons">
-    <i class="bi bi-dash-lg"></i>
-    <div class="quantity">0</div>
-    <i class="bi bi-plus-lg"></i>
-  </div>
-  </div>
-  <img width="220" src="assets/placeholder.jpg" alt="">
-  <div class="details"></div>
-</div> 
-
-<div class="item"> 
-  <h3>Meme 4 </h3>
-  <p>This meme sucks</p>
-  <div class="price-qty">
-  <h2>$879</h2>
-  <div class="buttons">
-    <i class="bi bi-dash-lg"></i>
-    <div class="quantity">0</div>
-    <i class="bi bi-plus-lg"></i>
-  </div>
-  </div>
-  <img width="220" src="assets/placeholder.jpg" alt="">
-  <div class="details"></div>
-</div> 
-</div>
-<form action="/form/submit" method="GET"> 
-  <input type="text" name="text" class="search" placeholder="Search here!">
-  <input type="submit" name="submit" class="submit" value="Search">
+<!-- <div id="item" >  -->
+    <!-- <h3>Meme 1 </h3>
+    <p>This meme sucks</p>
+    <div id="price-qty" class="price-qty">
+    <h2>$400</h2>
+    <div id="buttons" class="buttons">
+      <i type="button" id="bi bi-dash-lg"class="bi bi-dash-lg"></i>
+      <div class="quantity">0</div>
+      <i id="bi bi-plus-lg" class="bi bi-plus-lg"></i>
+    </div>
+    </div>
+    <img id="image" width="220" src="assets/placeholder.jpg" alt="distracted boyfriend">
+    <div class="details"></div> -->
+<form id="form"> 
+  <input type="text" id="text" name="text" class="search" placeholder="Search.." required>
+  <input type="submit" name="submit" class="submit" value="Search" required>
 </form>
-</body>
-<script src="index.js"></script>
+</div>
+<!-- mousemove -->
+<div id="cursor" class="cursor"></div>
+<div id="cursor2"class="cursor2"></div>
+</div>
+<!-- clicks -->
+<!-- Item #1 -->
+<div id="quantity" class="quantity">
+  <button class="plus-btn" type="button" name="button"></button>
+  <input type="text" value="0" id="input" />
+  <button class="minus-btn" type="button" name="button"></button>
+</div>
+
+<!-- Item #2 -->
+<div class="quantity">
+  <button class="plus-btn" type="button" name="button"></button>
+  <input type="text" value="0" id="input" />
+  <button class="minus-btn" type="button" name="button"></button>
+</div>
+
+<!-- Item #3 -->
+<div class="quantity">
+  <button class="plus-btn" type="button" name="button"></button>
+  <input type="text" value="0" id="input" />
+  <button class="minus-btn" type="button" name="button"></button>
+</div>
+<!-- Item #4 -->
+<div class="quantity">
+  <button class="plus-btn" type="button" name="button"></button>
+  <input type="text" value="0" id="input" />
+  <button class="minus-btn" type="button" name="button"></button>
+</div>
+<script defer src="index.js"></script>
 
 </html
+
+

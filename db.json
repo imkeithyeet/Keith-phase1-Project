@@ -1,0 +1,32 @@
+{
+  "memes": [
+    {
+      "id": "181913649",
+      "name": "Drake Hotline Bling",
+      "desc":"Call me on my cell phone",
+      "image":"./assets/Memes/drakehotlinebling.jpg",
+      "price":"$400"
+    },
+    {
+      "id": "112126428",
+      "name": "Distracted Boyfriend",
+      "desc":"What you looking at willis?",
+      "image": "./assets/Memes/distracted boyfriend.jpg",
+      "price":"$200"
+    },
+    {
+      "id": "438680",
+      "name": "Batman Slapping Robin",
+      "desc":"I'm going to slap you silly foo",
+      "image": "./assets/Memes/Batman-slapping-Robin-Meme.jpg",
+      "price":"$1000"
+    },
+    {
+      "id": "188390779",
+      "name": "Woman Yelling At Cat",
+      "desc":"You said it was gluten free!!!",
+      "image": "./assets/Memes/womanyellingcat.jpg",
+      "price":"$879"
+    }
+  ]
+}
