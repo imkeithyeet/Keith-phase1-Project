@@ -51,23 +51,6 @@ form.addEventListener("submit", function (e) {
   // console.log("clicked")
 });
 
-
-function totalClick(click){
-  const totalClicks= document.getElementById("totalClicks");
-  const sumvalue= parseInt(totalClicks.innerText) + click;
-  console.log(sumvalue+click)
-  totalClicks.innerText = sumvalue;
-  // we don't want negative clicks
-  if(sumvalue <0){
-    totalClicks.innerText = 0;
-  }
-// reset them values
-if(click===0){
-  totalClicks.innerText = 0;
-
-}
-}
-
 const textInfo = document.getElementById("text");
 console.log(text);
 
